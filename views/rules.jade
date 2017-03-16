@@ -7,3 +7,13 @@ block content
     h1 #{title}!
     a(href='/') Home
     a(href='/user') Profile
+    div.clients
+        h1 Clients
+        each client, index in JSON.parse(clients)
+            div.client
+                = client.name
+    div.rules
+        h1 Rules
+        each rule in JSON.parse(rules)
+            div.rule
+                = rule.name
