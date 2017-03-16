@@ -1,10 +1,14 @@
 extends layout
 
+block head
+  h2.mdc-typography--headline #{title}
+
 block content  
-  h1= title
-  p Welcome to #{title}
+  h1.mdc-typography--headline Rule Master Demo App
+  p Login to view a list of rules and the applications to which they belong
   br
   a(href="/login")
-    button() Login
+    button.mdc-button.mdc-button--raised.mdc-button--primary.mdc-ripple-surface(data-mdc-auto-init="MDCRipple") Login
+
 
   

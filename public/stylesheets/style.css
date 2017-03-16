@@ -1,8 +1,5 @@
-body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
-}
-
-a {
-  color: #00B7FF;
+.material-icons {
+  text-decoration: none;
+  cursor: pointer;
+  padding: 0px 8px 0px 0px;
 }
