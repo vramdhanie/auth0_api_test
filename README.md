@@ -1,6 +1,8 @@
-# 01-Login
+# API Test
 
-## Running the Sample
+_This project is based on the sample project provided by Auth0_
+
+## Running the Code
 
 Install the dependencies.
 
