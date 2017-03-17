@@ -74,3 +74,13 @@ main {
   padding-left: 15px;
 }
 
+.client {
+  background: linear-gradient(135deg, rgba(100,100,100,0.1), rgba(50,50,50,0.2));
+  margin-top: 10px;
+}
+
+.rule {
+  background-color: #FFFFFF;
+  margin-top: 5px;
+}
+
