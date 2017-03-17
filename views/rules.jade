@@ -4,16 +4,62 @@ block head
     h2.mdc-typography--headline #{title}
 
 block content
-    h1 #{title}!
-    a(href='/') Home
-    a(href='/user') Profile
+    h1.mdc-typography--display1 Welcome to the rules page
+    div.mdc-elevation--z2.profile
+        img(src="#{user.picture}")
+        div
+            h2.mdc-typography--subheading1 Welcome #{user.nickname}!
+            p.mdc-typography--body2 This page displays a list of clients and each rule that is associated with that client.
+
     div.clients
         h1 Clients
-        each client, index in JSON.parse(clients)
-            div.client
-                = client.name
-    div.rules
-        h1 Rules
-        each rule in JSON.parse(rules)
-            div.rule
-                = rule.name
+        each client, key in data.clients
+            div.client.mdc-card
+                section.mdc-card__primary
+                    h1.client_name.mdc-card__title.mdc-card__title--large
+                        = key
+                    h2.client_description.mdc-card__subtitle
+                        = client.client.description
+                section.rules.mdc-card__primary
+                    h1.mdc-card-title Rules
+                    h2.mdc-card__subtitle These rules are specific to this client
+                    each rule, index in client.rules
+                        div.rule.mdc-card
+                            div.mdc-card__horizontal-block
+                                section.rule_name.mdc-card__primary
+                                    h1.mdc-card__title.mdc-card__title--large
+                                        = rule.name
+                                    h2.mdc-card__subtitle
+                                        = rule.stage
+                                div.rule_enabled.mdc-card__media-item
+                                    if rule.enabled
+                                        i.material-icons.icon_on check_circle
+                                    else
+                                        i.material-icons.icon_off highlight_off
+                            div.rule_script.mdc-card__supporting-text
+                                pre
+                                    code.language-javascript
+                                        != rule.script
+                    else
+                        div.rule.mdc-card
+                            div.no_rule.mdc-card__supporting-text There are no rules applied directly to this application
+                section.rules.mdc-card__primary
+                    h1.mdc-card-title Global Rules
+                    h2.mdc-card__subtitle These rules are applied to all clients
+                    each rule in data.all
+                        div.rule.mdc-card
+                            div.mdc-card__horizontal-block
+                                section.rule_name.mdc-card__primary
+                                    h1.mdc-card__title.mdc-card__title--large
+                                        = rule.name
+                                    h2.mdc-card__subtitle
+                                        = rule.stage
+                                div.rule_enabled.mdc-card__media-item
+                                    if rule.enabled
+                                        i.material-icons.icon_on check_circle
+                                    else
+                                        i.material-icons.icon_off highlight_off
+                            div.rule_script.mdc-card__supporting-text
+                                pre
+                                    code.language-javascript
+                                        != rule.script

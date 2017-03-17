@@ -5,10 +5,33 @@ block head
 
 block content  
   h1.mdc-typography--headline Rule Master Demo App
-  p Login to view a list of rules and the applications to which they belong
-  br
-  a(href="/login")
-    button.mdc-button.mdc-button--raised.mdc-button--primary.mdc-ripple-surface(data-mdc-auto-init="MDCRipple") Login
+  p.mdc-typography--body1 Login to view a list of rules and the applications to which they belong
+
+  h2.mdc-typography--subheading1 About This App
+  p.mdc-typography--body1
+    | This application demonstrates how to use the Auth0 Management API to fetch a list of clients and associated
+    | rules. Rules are not assigned to specific clients so it was necessary to parse the body of the rule and look
+    | for the name of the application.
+  p.mdc-typography--body1
+    | Some rules are not restricted to any one application and as such apply to all.
+
+  h2.mdc-typography--subheading1 Limitations
+  p.mdc-typography--body1
+    | There are a few limitations:
+    ul.mdc-list.mdc-list--two-line
+      li.mdc-list-item
+        span.mdc-list-item__text
+          span.mdc-list-item__text__primary
+            | Testing
+          span.mdc-list-item__text__secondary
+            | No testing was implemented as this is just a quick mock up to demonstrate a feature.
 
 
+      li.mdc-list-item
+        span.mdc-list-item__text
+          span.mdc-list-item__text__primary
+            | Rules
+          span.mdc-list-item__text__secondary
+            | The test for the client name in the rule can be improved to ensure that the client name occurs in
+            | specific context. It may even be improved further by using the rule id rather than the name.
   

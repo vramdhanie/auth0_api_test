@@ -4,8 +4,10 @@ html.mdc-typography
     title= title
     link(rel='stylesheet', href='/stylesheets/material-components-web.css')
     link(rel='stylesheet', href='/stylesheets/style.css')
+    link(rel='stylesheet', href='/stylesheets/prism-dark.css')
     link(rel='stylesheet', href='https://fonts.googleapis.com/icon?family=Material+Icons')
     script(src="https://cdn.auth0.com/js/lock/10.3/lock.min.js")
+    style @import url(https://fonts.googleapis.com/css?family=Roboto+Mono);
   body
 
     header.mdc-toolbar.mdc-toolbar--fixed
@@ -13,11 +15,26 @@ html.mdc-typography
         a.material-icons business
         span.mdc-toolbar__title
           block head
-      section.mdc-toolbar__section.mdc-toolbar__section--align-end(role='toolbar')
-        a.material-icons(href='/',aria-label='Home',alt='Home') home
-        a.material-icons(href='/user',aria-label='Profile',alt='Profile') account_circle
-    main
-      div.mdc-toolbar-fixed-adjust
+
+
+    div.mdc-toolbar-fixed-adjust.content
+      nav.mdc-permanent-drawer
+        div.mdc-list-group
+          nav.mdc-list
+            if !user
+              a.mdc-list-item(href='/login')
+                i.material-icons arrow_forward
+                | Login
+            else
+              nav.mdc-list
+                a.mdc-list-item(href='/logout')
+                  i.material-icons home
+                  | Logout
+              nav.mdc-list
+                a.mdc-list-item(href='/rules')
+                  i.material-icons inbox
+                  | Rules
+      main
          block content
     script(src='/js/material-components-web.js')
     script(mdc.autoInit())

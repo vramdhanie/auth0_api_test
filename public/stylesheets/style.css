@@ -1,5 +1,76 @@
+* {
+  text-rendering: geometricPrecision;
+  box-sizing: border-box;
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  font-size: 14px;
+  font-family: "Avenir Next","avenir-next-web",Avenir,"Helvetica Neue",Hevetica,sans-serif;
+  height: 100%;
+}
+
+.content{
+  height: 100%;
+  display: flex;
+}
+
 .material-icons {
   text-decoration: none;
   cursor: pointer;
   padding: 0px 8px 0px 0px;
 }
+
+.client_name {
+  color: #053b4e;
+}
+
+.rule_name > h1 {
+  font-size: 1.2em;
+}
+
+.rules > h1 {
+  font-size: 1.3em;
+  opacity:54;
+}
+
+.no_rule {
+  font-size: 0.9em;
+  font-weight: 400;
+  color: darkred;
+  opacity: 60;
+}
+
+.icon_on {
+  color: #4cd964;
+  opacity: 80;
+}
+
+.icon_off {
+  color: rgba(0,0,0,0.3);
+}
+
+.rule_script > pre {
+  background-color: black;
+}
+
+.profile {
+  display: flex;
+}
+
+.profile > img {
+  flex-grow: 1;
+}
+
+.profile > div {
+  flex-grow: 2;
+  padding-left: 16px;
+}
+
+main {
+  padding-left: 15px;
+}
+
